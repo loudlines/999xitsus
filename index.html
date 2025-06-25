@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>999 x ItsUs</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .glitch {
+      font-size: 4rem;
+      position: relative;
+      color: white;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: "999 x ItsUs";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .glitch::before {
+      color: #f0f;
+      z-index: -1;
+      animation: glitch 1s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      color: #0ff;
+      z-index: -2;
+      animation: glitch 1s infinite linear alternate;
+    }
+
+    @keyframes glitch {
+      0% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0, 0);
+      }
+      10% {
+        clip: rect(5px, 9999px, 25px, 0);
+        transform: translate(-2px, -2px);
+      }
+      20% {
+        clip: rect(10px, 9999px, 20px, 0);
+        transform: translate(2px, 2px);
+      }
+      30% {
+        clip: rect(15px, 9999px, 35px, 0);
+        transform: translate(-2px, 0);
+      }
+      40% {
+        clip: rect(20px, 9999px, 25px, 0);
+        transform: translate(2px, -2px);
+      }
+      100% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glitch">999 x ItsUs</div>
+</body>
+</html>
